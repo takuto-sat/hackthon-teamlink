@@ -4,24 +4,24 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 class UserManager(BaseUserManager):
-    def create_user(self, username, phone_number, password=None):
+    def create_user(self, username, tel_number, password=None):
         if not username:
             raise ValueError('Users must have an username')
-        elif not phone_number:
+        elif not tel_number:
             raise ValueError('Users must have an phone number')
 
         user = self.model(
             username = username,
-            phone_number = phone_number,
+            tel_number = tel_number,
         )
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, username, phone_number, password):
+    def create_superuser(self, username, tel_number, password):
         user = self.create_user(
             username,
-            phone_number,
+            tel_number,
             password=password,
         )
         user.is_admin = True
@@ -37,9 +37,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     objects = UserManager()
 
-    #EMAIL_FIELD = 'email'
-    #USERNAME_FIELD = 'username'
-    #REQUIRED_FIELDS = []
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['tel_number']
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
