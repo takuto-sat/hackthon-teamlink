@@ -5,9 +5,6 @@
     <form class="form-signin" method='post'>{% csrf_token %}
             <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
             <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
-            {% if error %}
-            {{error}}
-            {% endif %}
 
             <div class="form-floating">
                 <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="username_data" required autofocus>
