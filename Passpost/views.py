@@ -17,7 +17,7 @@ def signupview(request):
         profile_form = ProfileForm(request.POST)
         if signup_form.is_valid() and profile_form.is_valid():
             username = signup_form.cleaned_data.get('username')
-            email = signup_form.cleaned_data.get('phone_number')
+            tel_number = signup_form.cleaned_data.get('tel_number')
             password = signup_form.cleaned_data.get('password')
             school_number = profile_form.cleaned_data.get('school_number')
             user = User.objects.create_user(username, phone_number, password)
