@@ -9,9 +9,9 @@ app = Flask(__name__)
 
 def toggleLock():
 	# 各種パラメータ
-	uuid = ''
-	secret_key = ''
-	api_key = ''
+	uuid = 'A50706D7-4B52-160F-932F-E2FC938249A5'
+	secret_key = 'BD6SAZMvcvovT//0Dl/+EsqnUESmSr18WgAIhYdLfYrpzGg9KNzqljik5mwtOSM2A/Ki9oPoU2sPfIHaz1an8wFbilBq6h1Kvc0cw64WQIMYAAClBwbXS1IWD5Mv4vyTgkml'
+	api_key = 'IaoUVMXDBS1AxHsHNTky1E2zztJBI4z9S4acNeD6'
 
 	# ヘッダーの設定
 	headers = {'x-api-key': api_key}
