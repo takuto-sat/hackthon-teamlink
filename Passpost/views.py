@@ -20,7 +20,7 @@ def signupview(request):
 
     else:
         return render(request, 'signup.html', {})
-
+"abeyuki"
 """
 def loginview(request):
     if request.method=='POST':
