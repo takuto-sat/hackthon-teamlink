@@ -10,14 +10,14 @@ app = Flask(__name__)
 def toggleLock():
 	# 各種パラメータ
 	uuid = 'A50706D7-4B52-160F-932F-E2FC938249A5'
-	secret_key = 'BD6SAZMvcvovT//0Dl/+EsqnUESmSr18WgAIhYdLfYrpzGg9KNzqljik5mwtOSM2A/Ki9oPoU2sPfIHaz1an8wFbilBq6h1Kvc0cw64WQIMYAAClBwbXS1IWD5Mv4vyTgkml'
+	secret_key = '3e9201932f72fa2f4ffff40e5ffe12ca'
 	api_key = 'IaoUVMXDBS1AxHsHNTky1E2zztJBI4z9S4acNeD6'
 
 	# ヘッダーの設定
 	headers = {'x-api-key': api_key}
 
 	# cmd
-	cmd = 88 # 施錠する場合は「82」、解錠する場合は「83」
+	cmd = 83 # 施錠する場合は「82」、解錠する場合は「83」
 
 	# history
 	history = 'WEB API' # とりあえず「WEB API」と名付ける
@@ -33,7 +33,7 @@ def toggleLock():
 	sign = cmac.hexdigest()
 
 	# API
-	url = f'https://app.candyhouse.co/api/sesame2/{uuid}/cmd'
+	url = 'https://app.candyhouse.co/api/sesame2/{uuid}/cmd'
 	body = {
 		'cmd': cmd,
 		'history': base64_history,
